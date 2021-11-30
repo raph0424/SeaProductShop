@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "seashop",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

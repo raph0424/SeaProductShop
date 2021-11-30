@@ -1,0 +1,47 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="back_to_content" routerLink="/boats">
+      <ion-col size="2">
+        <ion-icon name="arrow-back" size="large"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-text>Back to boats</ion-text>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="boat; else noBoatTemplate">
+      <ion-row class="boat_img" [style.background-image]="backgroundImg">
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="boat_name">
+          <ion-title>{{ boat.name }}</ion-title>
+        </ion-col>
+        <ion-col class="boat_description" size="12">
+          <ion-text *ngFor="let line of boat.description">
+            {{ line }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+
+<ng-template #noBoatTemplate>
+  <ion-row class="boat_not_found_row">
+    <ion-col size="12" class="boat_not_found_img">
+      <ion-img src="../../assets/img/not_found.png" alt="not found image"></ion-img>
+    </ion-col>
+    <ion-col size="12" class="boat_not_found_title">
+      <ion-title>BATEAU INTROUVABLE</ion-title>
+      <ion-text>Le bateau séléctionné est introuvable.</ion-text>
+    </ion-col>
+    <ion-col size=12 class="boat_not_found_button">
+      <ion-button routerLink="/boats">Retourner aux bateaux</ion-button>
+    </ion-col>
+  </ion-row>
+</ng-template>

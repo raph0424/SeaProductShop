@@ -1,0 +1,25 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-title>Modal Content</ion-title>  
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>  
+</ion-header>  
+<ion-content>  
+  <ion-list>  
+    <ion-item>  
+      <ion-label>{{product.price}}</ion-label>
+      <ion-label>{{product.unit}}</ion-label>
+      <ion-label *ngIf="product.availability == 1">Disponible;</ion-label>
+      <ion-label *ngIf="product.availability == 0">Indisponible</ion-label>
+      <ion-label *ngIf="product.sale == 0">Pas de promotion</ion-label>
+      <ion-label *ngIf="product.sale > 0">Promo : {{product.discount}} %</ion-label>
+      <ion-label>{{product.comments}}</ion-label>
+      <ion-label>{{product.owner}}</ion-label>
+      <ion-icon *ngIf="currQty > 0" name="remove-circle" (click)="setQty('remove')"></ion-icon>
+      <ion-text>{{ currQty }}</ion-text>
+        <ion-icon name="add-circle" (click)="setQty('add')"></ion-icon>
+    </ion-item> 
+  </ion-list>
+
+  <ion-button color="danger" (click)="addToCart(product, currQty)">ajouter</ion-button>
+</ion-content>

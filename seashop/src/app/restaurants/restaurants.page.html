@@ -1,0 +1,33 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid class="restaurants">
+    <ion-row class="restaurants__hero">
+      <ion-col size="12" class="restaurants__hero--title">
+        <ion-title>{{title}}</ion-title>
+      </ion-col>
+      <ion-col size="12" class="restaurants__hero--subtitle">
+        <ion-text>{{subTitle}}</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="restaurants__content">
+      <ion-col size-xl="5" size-xs="12" size-sm="6" *ngFor="let restaurant of restaurantsList">
+        <ion-card (click)="onLoadRestaurant(restaurant)" class="restaurants__card">
+          <div class="img__container">
+            <ion-img [src]="restaurant.picture" [alt]="restaurant.name"></ion-img>
+            <div class="card__infos">
+              <h3>Voir {{ restaurant.name }}</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="restaurants__cardtitle">{{ restaurant.name }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

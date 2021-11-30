@@ -1,0 +1,36 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="boats">
+    <ion-row class="boats__hero">
+      <ion-col size="12" class="boats__hero--title">
+        <ion-title>Catégories</ion-title>
+      </ion-col>
+      <ion-col size="12" class="boats__hero--subtitle">
+        <ion-text>Faites votre choix parmis nos différentes catégories de produits</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="boats__content">
+      <ion-col size-xl="5" size-xs="12" size-sm="6" *ngFor="let category of categories">
+        <ion-card (click)="onLoadProduct(category.sale ? { sale: category.sale} : { idCat: category.id })"
+          class="boats__card">
+          <div class="img__container">
+            <ion-img [src]="category.picture" [alt]="category.name"></ion-img>
+            <div class="card__infos">
+              <h3>Voir {{ category.name }}</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="boats__cardtitle">{{ category.name }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

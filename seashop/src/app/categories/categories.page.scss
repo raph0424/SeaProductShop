@@ -1,0 +1,73 @@
+.boats {
+
+  &__hero {
+    height: 35vh;
+    width: 100vw;
+    background-image: url("../../assets/img/spice_blured.jpg");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    margin-bottom: .25em;
+
+    &--title {
+      text-align: center;
+      align-self: flex-end;
+
+      & > ion-title {
+        font-size: large;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0px #000000;
+      }
+    }
+
+    &--subtitle {
+      text-align: center;
+      align-self: flex-start;
+      text-shadow: 1px 1px 0px #000000;
+    }
+  }
+
+  &__content {
+    background-color: var(--ion-color-primary);
+    justify-content: center;
+  }
+
+  &__cardtitle {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.img__container {
+  position: relative;
+}
+
+ion-card:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  transition: transform .07s ease-in;
+
+  & .card__infos {
+    color: var(--ion-text-color);
+    background-image: linear-gradient(-225deg, #473B7BB3 0%, #3584A7B3 51%, #30D2BE 100%);
+  }
+}
+
+.card__infos {
+  transition: .2s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0);
+}

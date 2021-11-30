@@ -1,0 +1,47 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="back_to_content" routerLink="/restaurants">
+      <ion-col size="2">
+        <ion-icon name="arrow-back" size="large"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-text>Back to restaurants</ion-text>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="restaurant; else noRestaurantTemplate">
+      <ion-row class="restaurant_img" [style.background-image]="backgroundImg">
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="restaurant_name">
+          <ion-title>{{ restaurant.name }}</ion-title>
+        </ion-col>
+        <ion-col class="restaurant_description" size="12">
+          <ion-text *ngFor="let line of restaurant.description">
+            {{ line }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+
+<ng-template #noRestaurantTemplate>
+  <ion-row class="restaurant_not_found_row">
+    <ion-col size="12" class="restaurant_not_found_img">
+      <ion-img src="../../assets/img/not_found.png" alt="not found image"></ion-img>
+    </ion-col>
+    <ion-col size="12" class="restaurant_not_found_title">
+      <ion-title>RESTAURANT INTROUVABLE</ion-title>
+      <ion-text>Le restaurant séléctionné est introuvable.</ion-text>
+    </ion-col>
+    <ion-col size=12 class="restaurant_not_found_button">
+      <ion-button routerLink="/restaurants">Retourner aux restaurants</ion-button>
+    </ion-col>
+  </ion-row>
+</ng-template>

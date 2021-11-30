@@ -1,0 +1,102 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <div class="bg-image">
+      <ion-row class="home__title--container">
+        <ion-title class="home__title">Le bateau de Thibault</ion-title>
+      </ion-row>
+      <ion-row class="home__description">
+        <ion-text class="home__description--important">Vente en direct de notre bateau</ion-text>
+        <ion-text class="home__description--important">Produits selon la saison, Livraison sur Paris</ion-text>
+        <ion-text>
+          <ion-icon name="call"></ion-icon>
+          <a href="tel:+33663999978">06.63.99.99.78</a>
+        </ion-text>
+        <ion-text>
+          <ion-icon name="mail"></ion-icon>
+          <a href="mailto:lebateaudethibault@gmail.com">lebateaudethibault@gmail.com</a>
+        </ion-text>
+        <ion-icon size="large" class="home__description--icon" name="logo-facebook" (click)="toFacebook()"
+          [color]="iconColor" (mouseover)="iconColor='hovered'" (mouseout)="iconColor=''">
+        </ion-icon>
+      </ion-row>
+      <section class="wave__container">
+        <div class="wave"></div>
+      </section>
+    </div>
+    <ion-row class="home__cardrow padding__row">
+      <ion-col size-xl="2" size-xs="12" size-sm="6">
+        <ion-card (click)="toCategories()">
+          <div class="image__container">
+            <ion-img src="../../assets/img/fish.jpg" alt="fishes image"></ion-img>
+            <div class="card__infos">
+              <h3>Accéder à la boutique</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="home__cardtitle">Produits et Promotions</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xl="2" size-xs="12" size-sm="6">
+        <ion-card (click)="toBoats()">
+          <div class="image__container">
+            <ion-img src="../../assets/img/boats.jpg" alt="fishing boats image"></ion-img>
+            <div class="card__infos">
+              <h3>Voir les bateaux</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="home__cardtitle">Bateaux</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="home__cardrow ">
+      <ion-col size-xl="2" size-xs="12" size-sm="6">
+        <ion-card (click)="toRestaurants()">
+          <div class="image__container">
+            <ion-img src="../../assets/img/restaurants.jpg" alt="restaurants image"></ion-img>
+            <div class="card__infos">
+              <h3>Voir les restaurants</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="home__cardtitle">Restaurants</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xl="2" size-xs="12" size-sm="6">
+        <ion-card (click)="toRecipes()">
+          <div class="image__container">
+            <ion-img src="../../assets/img/recipes.jpg" alt="recipes image"></ion-img>
+            <div class="card__infos">
+              <h3>Voir les recettes</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="home__cardtitle">Recettes</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xl="2" size-xs="12" size-sm="6">
+        <ion-card (click)="toaAbout()">
+          <div class="image__container">
+            <ion-img src="../../assets/img/about.jpg" alt="about image"></ion-img>
+            <div class="card__infos">
+              <h3>Nous contacter</h3>
+            </div>
+          </div>
+          <ion-card-header>
+            <ion-card-subtitle class="home__cardtitle">A Propos de nous</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

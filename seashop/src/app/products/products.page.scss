@@ -1,0 +1,150 @@
+.back_to_content {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  justify-content: center;
+  width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.restaurant_img {
+  height: 30vh;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.restaurant_name {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  margin-top: 2em;
+}
+
+.restaurant_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.restaurant_not_found_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & > ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.restaurant_not_found_title {
+  flex-direction: column;
+}
+
+.restaurant_not_found_img {
+
+  & > ion-img {
+    max-width: 50vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .restaurant_img {
+    background-position: center;
+  }
+
+  .restaurant_not_found_img {
+
+    & > ion-img {
+      max-width: 20vw;
+    }
+  }
+}
+.products {
+
+  &__hero {
+    height: 35vh;
+    width: 100vw;
+    background-image: url("../../assets/img/restaurants_blured.jpeg");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    margin-bottom: .25em;
+
+    &--title {
+      text-align: center;
+      align-self: flex-end;
+
+      & > ion-title {
+        font-size: large;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0px #000000;
+      }
+    }
+
+    &--subtitle {
+      text-align: center;
+      align-self: flex-start;
+      text-shadow: 1px 1px 0px #000000;
+    }
+  }
+
+  &__content {
+    background-color: var(--ion-color-primary);
+    justify-content: center;
+  }
+
+  &__cardtitle {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__cardsubtitle {
+    text-align: center;
+  }
+}
+
+.price {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.qty_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .row-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .qty {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btn_row {
+    display: flex;
+    justify-content: center;
+}

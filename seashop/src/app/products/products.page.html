@@ -1,0 +1,91 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid class="products">
+    <ion-row class="back_to_content" routerLink="/categories">
+      <ion-col size="2">
+        <ion-icon name="arrow-back" size="large"></ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-text>Back to categories</ion-text>
+      </ion-col>
+    </ion-row>
+    <div *ngIf="category; else noCategoryTemplate">
+      <ion-row class="products__content">
+        <ion-col size-xl="3" size-xs="12" size-sm="6" *ngFor="let product of products">
+          <ion-card class="products__card">
+            <ion-img [src]="product.picture" [alt]="product.name"></ion-img>
+            <ion-card-header>
+              <ion-card-title class="products__cardtitle">{{ product.name }}</ion-card-title>
+              <ion-card-subtitle class="products__cardsubtitle">{{ product.comments }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="price" *ngIf="product.discount; else productPriceTemplate">
+                    <ion-text>
+                      Prix:
+                    </ion-text>
+                    <ion-text style="text-decoration: line-through;">
+                      {{ product.price }} € / {{ product.unit }}
+                    </ion-text>
+                    <ion-text style="color: var(--ion-color-danger);">
+                      {{ product.discount }} € / {{ product.unit }}
+                    </ion-text>
+                  </ion-col>
+                  <ng-template #productPriceTemplate>
+                    <ion-col class="price">
+                      <ion-text>Price: </ion-text>
+                      <ion-text>{{ product.price }} € / {{ product.unit }}</ion-text>
+                    </ion-col>
+                  </ng-template>
+                </ion-row>
+                <ion-row class="qty_row">
+                  <ion-col class="left-button">
+                    <ion-button [disabled]="!product.availability || product.qty <= 0" fill="clear"
+                      (click)="removeProductQty(product)">
+                      <ion-icon name="remove-circle" size="large"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                  <ion-col class="qty">
+                    <ion-text>{{ product.qty }}</ion-text>
+                  </ion-col>
+                  <ion-col class="right-button">
+                    <ion-button [disabled]="!product.availability" fill="clear" (click)="addProductQty(product)">
+                      <ion-icon name="add-circle" size="large"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="btn_row">
+                  <ion-button [disabled]="!product.availability || product.qty <= 0"
+                    (click)="addToCart(product, product.qty)">
+                    {{ product.availability ? 'Ajouter au panier' : 'Produit indisponible' }}
+                  </ion-button>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+
+<ng-template #noCategoryTemplate>
+  <ion-row class="restaurant_not_found_row">
+    <ion-col size="12" class="restaurant_not_found_img">
+      <ion-img src="../../assets/img/empty_products.png" alt="not found image"></ion-img>
+    </ion-col>
+    <ion-col size="12" class="restaurant_not_found_title">
+      <ion-title>PAS DE PRODUITS</ion-title>
+      <ion-text>Il n'y a pas de produits pour cette catégorie !.</ion-text>
+    </ion-col>
+    <ion-col size=12 class="restaurant_not_found_button">
+      <ion-button routerLink="/categories">Retourner aux catégories</ion-button>
+    </ion-col>
+  </ion-row>
+</ng-template>

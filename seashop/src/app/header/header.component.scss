@@ -1,0 +1,11 @@
+.header-title {
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.bg-dark {
+  background: #393E46 !important;
+}

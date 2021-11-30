@@ -1,0 +1,210 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.home__title {
+  font-size: 2em;
+  margin-top: 0.25em;
+
+  &--container {
+    text-align: center;
+  }
+}
+
+.home__description {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & > ion-text {
+    padding: .25em;
+    z-index: 3;
+
+    & > a {
+      color: var(--ion-text-color);
+      text-decoration: none;
+      margin-left: 1em;
+
+      &:hover {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%230D63A5' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+        background-position: 0 100%;
+        background-size: auto 6px;
+        background-repeat: repeat-x;
+        text-decoration: none;
+      }
+    }
+  }
+  &--important {
+    font-weight: 700;
+  }
+
+  &--icon {
+    z-index: 3;
+
+    &:hover {
+      fill: var(--ion-color-primary);
+      cursor: pointer;
+    }
+  }
+}
+
+.home__cardrow {
+  justify-content: center;
+  align-items: center;
+  background: var(--ion-color-primary);
+
+  &.padding__row {
+    padding-top: 2em;
+  }
+
+  & .home__cardtitle {
+    text-align: center;
+  }
+}
+
+ion-card {
+
+  &:hover {
+		transform: translateY(2px);
+    transition: transform .07s ease-in;
+  }
+}
+
+.card__infos {
+  transition: .2s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0);
+}
+
+ion-card:hover {
+  cursor: pointer;
+
+  & .card__infos {
+    color: var(--ion-text-color);
+    background-image: linear-gradient(-225deg, #473B7BB3 0%, #3584A7B3 51%, #30D2BE 100%);
+  }
+}
+
+.image__container {
+  position: relative;
+}
+
+.wave__container {
+  position: relative;
+  background: transparent;
+  height: 5vh;
+}
+
+.wave {
+  position: absolute;
+  height: 108px;
+  width: 100%;
+  background: transparent;
+  bottom: 0;
+}
+
+.wave::before, .wave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+
+.wave::before {
+  width: 55%;
+  height: 109%;
+  background-color: var(--ion-color-primary);
+  right: -1.5%;
+  top: 60%;
+}
+.wave::after {
+  width: 55%;
+  height: 100%;
+  // background-image: url("../../assets/img/ocean_teal.jpg");
+  // background-position: bottom;
+  // background-size: cover;
+  background-color: var(--ion-background-color);
+  left: -1.5%;
+  top: 40%;
+}
+
+@media (max-width: 960px) {
+  .wave__container {
+    position: relative;
+    background: transparent;
+    height: 5vh;
+    opacity: 0;
+  }
+
+  .wave {
+    position: absolute;
+    height: 108px;
+    width: 100%;
+    background: transparent;
+    bottom: 0;
+  }
+
+  .wave::before, .wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+  }
+
+  .wave::before {
+    width: 55%;
+    height: 109%;
+    background-color: var(--ion-color-primary);;
+    right: -1.5%;
+    top: 60%;
+  }
+  .wave::after {
+    width: 55%;
+    height: 100%;
+    background-color: var(--ion-background-color);;
+    left: -1.5%;
+    top: 40%;
+  }
+}
+
+.bg-image {
+  // background-image: url("../../assets/img/ocean_teal.jpg");
+  background-position: bottom;
+  background-size: cover;
+}

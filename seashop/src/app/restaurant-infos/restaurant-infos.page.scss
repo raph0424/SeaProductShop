@@ -1,0 +1,74 @@
+.back_to_content {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  justify-content: center;
+  width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & > ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.restaurant_img {
+  height: 30vh;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.restaurant_name {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  margin-top: 2em;
+}
+
+.restaurant_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.restaurant_not_found_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & > ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.restaurant_not_found_title {
+  flex-direction: column;
+}
+
+.restaurant_not_found_img {
+
+  & > ion-img {
+    max-width: 50vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .restaurant_img {
+    background-position: center;
+  }
+
+  .restaurant_not_found_img {
+
+    & > ion-img {
+      max-width: 20vw;
+    }
+  }
+}

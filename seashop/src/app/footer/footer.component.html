@@ -1,0 +1,33 @@
+<ion-segment class="bg-dark" slot="bottom" [value]="selectedPage" scrollable swipeGesture color="primary">
+  <ion-segment-button value="home" routerLink="/home">
+    <ion-icon name="home"></ion-icon>
+    <ion-label>Accueil</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="about" routerLink="/about">
+    <ion-icon name="help-circle"></ion-icon>
+    <ion-label>A Propos</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="boats" routerLink="/boats">
+    <ion-icon name="boat"></ion-icon>
+    <ion-label>Bateaux</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="restaurants" routerLink="/restaurants">
+    <ion-icon name="restaurant"></ion-icon>
+    <ion-label>Restaurants</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="recipes" routerLink="/recipes">
+    <ion-icon name="fast-food"></ion-icon>
+    <ion-label>Recettes</ion-label>
+  </ion-segment-button>
+  <ion-segment-button [value]="productValue" routerLink="/categories">
+    <ion-icon name="pricetags"></ion-icon>
+    <ion-label>Produits et Promotions</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="cart" routerLink="/cart">
+    <ion-item>
+      <ion-icon name="cart"></ion-icon>
+      <ion-badge slot="end" class="cart__badge" color="danger">{{ cartProductsCount }}</ion-badge>
+    </ion-item>
+    <ion-label>Panier</ion-label>
+  </ion-segment-button>
+</ion-segment>

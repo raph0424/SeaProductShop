@@ -1,0 +1,47 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<ion-content>
+  <ion-grid class="about">
+    <ion-row class="about__hero">
+      <ion-img src="../../assets/icon/favicon.png" class="about__hero--icon"></ion-img>
+    </ion-row>
+    <div class="gradient-border">
+      <ion-row class="about__infos">
+        <ion-col class="about__col topcol">
+          <ion-title [class]="'about__title ' + iosClass">Le Bateau De Thibault</ion-title>
+          <ion-title [class]="'about__title pt-2 ' + iosClass">Contactez Nous !</ion-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="about__infos">
+        <ion-col class="about__col topcol">
+          <ion-text>
+            <ion-icon name="call"></ion-icon>
+            <a href="tel:+33663999978">06.63.99.99.78</a>
+          </ion-text>
+          <ion-text>
+            <ion-icon name="mail"></ion-icon>
+            <a href="mailto:lebateaudethibault@gmail.com">lebateaudethibault@gmail.com</a>
+          </ion-text>
+          <ion-icon size="large" class="about__description--icon" name="logo-facebook" (click)="toFacebook()">
+          </ion-icon>
+          <ion-text class="about__poem">
+            Qu'il est chaud le soleil<br>
+            Quand nous sommes en vacances<br>
+            c'est le sud de la France<br>
+            Papa bricole au garage<br>
+            Maman lit dans la chaise longue<br>
+            Dans ce joli paysage<br>
+            Moi, je me balade en tongs<br><br>
+
+            Que de bonheur !<br>
+            Que de bonheur !
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
